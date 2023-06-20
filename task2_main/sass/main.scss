@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 20px 50px;
+}
+
+.header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgb(242, 168, 151);
+    background: linear-gradient(90deg, rgba(242, 168, 151, 1) 0%, rgba(236, 202, 159, 0.9192927170868347) 50%, rgba(226, 228, 182, 0.9853992622439601) 100%);
+}
+
+.left-side {
+    color: #00252F;
+    img{
+        margin-right: 5px;
+    }
+    & p{
+        font-size: medium;
+        font-weight: 400;
+    }
+    
+}
+
+.right-side {
+    text-align: end;
+    & h6 {
+        font-size: medium;
+        font-weight: 400;
+    }
+    &  p {
+        display: inline-block;
+        background-color: #F2F2F2;
+        border: 1px solid #F2F2F2;
+        color: #666666;
+        font-size: medium;
+    
+    }
+}
+
+
+
+main{
+    background-color:#ffffff ;
+
+}
+.card {
+    box-shadow: 1px 1px 1px 1px lightgray;
+    .icons{
+        color: #ED8383;
+    }
+    .title {
+        color: #AAAAAA;
+    }
+    .data {
+        background-color: #FFF6EF;
+        &  p {
+    
+            margin: 0;
+            padding: 5px;
+        }
+        .description {
+            color: #666666;
+            font-weight: 600;
+        }
+    }
+    
+}
+
+
+
+
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-color: #E5E5E5;
+    color: #00252F;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+.part1{
+    display: flex;
+    justify-content: space-between;
+
+}
+section h1 {
+    font-weight: 200;
+
+}
+
+section .expected-time {
+    background-color: #F2F2F2;
+    color: red;
+}
+
+.process-section{
+    padding: 10px 80px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+}
+ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & .icon{
+        font-size: 35px;
+        color: #3AB748;
+        margin: 0 40px;
+        position: relative;
+        bottom: 30px;
+    }
+    & .text{
+        margin-left: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        .process-box{
+            color: #555555;
+        
+        }
+        .date-box{
+        color: #616161;
+        font-weight: 500;
+        }
+        .names{
+        color: #777777;
+        font-weight: 500;
+        font-size: 13px;
+        }
+        .user-icon{
+            color: #3762A4;
+            font-size: 12px;
+        }
+       
+        
+    
+    }
+    
+    /* Progress Div Css  */
+    
+    & .process-bar{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color:#FFFFFF;
+        border: 1px solid lightgray;
+        margin: 15px 0px;
+        display: grid;
+        place-items: center;
+        color: gray;
+        position: relative;
+        cursor: pointer;
+        & .fa-check{
+            display: none;
+        }
+        & p{
+            font-size: 13px;
+        }
+        .process-icon{
+            padding-top: 5px;
+            font-size: 15px;
+        }
+    }
+    
+}
+
+
+
+
+.time-span{
+    position: relative;
+    right: 40px;
+    color:#888888;
+
+}
+
+
+
+.process-bar::after{
+    width: 3px;
+        height: 70px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    content: " ";
+    position: absolute;
+    background-color: lightgray;
+    right: 30px;
+}
+.one::after{
+    width: 0;
+    height: 0;
+}
+
+
+/* Active Css  */
+
+ul li .active{
+    background-color: #3AB748;
+    color: #FFFFFF;
+    display: grid;
+    place-items: center;
+   p{
+        display: none;
+    }
+   .fa-check{
+        font-size: 20px;
+        display: flex;
+    }
+}
+li .active::after{
+    background-color: #3AB748;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:575px) {
+    .container-fluid {
+        padding: 20px 0;
+    }
+    
+    .right-side {
+        text-align: start;
+    }
+
+    ul {
+        padding: 2px;
+    }
+
+    section {
+        align-items: start;
+    }
+
+    .time-span {
+        right: 30px;
+    }
+    .process-section{
+        padding: 10px 20px;
+    }
+    section h1{
+        font-size: 1.5rem;
+
+    }
+    .process-box, .date-box{
+        font-size: 0.7em;
+    
+    }
+    .names{
+        font-weight: 200;
+        font-size: 9px;
+        }
+    
+      .process-section{
+        padding: 10px 0 0 40px;
+    }
+  
+}
+
+@media screen and (max-width:800px) {
+ 
+    .date-box,
+    .process-box {
+        display: block;
+    }
+    section .part1{
+        display: block;
+
+    }
+  
+}
